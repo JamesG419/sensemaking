@@ -54,11 +54,13 @@ def main(
 
     df = df.merge(
         document_dim,
-        how='left',
-        left_on=['Document ID', 'Line ID', 'Line Number', 'Original Text'],
-        right_on=['document_id', 'line_id', 'line_number', 'original_text']
+        how="left",
+        left_on=["Document ID", "Line ID", "Line Number", "Original Text"],
+        right_on=["document_id", "line_id", "line_number", "original_text"],
     )
-    document_dim = document_dim[["document_line_id", "document_id", "line_id", "line_number", "original_text"]]
+    document_dim = document_dim[
+        ["document_line_id", "document_id", "line_id", "line_number", "original_text"]
+    ]
 
     logger.info("Processing images...")
     image_dim = (
@@ -105,7 +107,18 @@ def main(
     )
 
     activity_log_facts["activity_id"] = activity_log_facts.index + 1
-    activity_log_facts = activity_log_facts[["activity_id", "activity_type", "date", "time", "user_id", "document_line_id", "image_id", "new_text"]]
+    activity_log_facts = activity_log_facts[
+        [
+            "activity_id",
+            "activity_type",
+            "date",
+            "time",
+            "user_id",
+            "document_line_id",
+            "image_id",
+            "new_text",
+        ]
+    ]
 
     # Save the processed data to CSV files
     logger.info(f"Saving data to {fact_path}, {user_path}, {document_path}, {image_path}")
