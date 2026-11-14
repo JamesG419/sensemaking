@@ -16,6 +16,26 @@ classifiers = [
     
 ]
 requires-python = "~=3.11.0"
+dependencies = [
+    "awscli>=1.40.10,<2",
+    "ipython>=9.2.0,<10",
+    "jupyterlab>=4.4.2,<5",
+    "loguru>=0.7.3,<0.8",
+    "matplotlib>=3.10.1,<4",
+    "mkdocs>=1.6.1,<2",
+    "notebook>=7.4.2,<8",
+    "numpy>=2.2.5,<3",
+    "openpyxl>=3.1.5,<4",
+    "pandas>=2.2.3,<3",
+    "pip>=25.1.1,<26",
+    "pytest>=8.3.5,<9",
+    "python-dotenv>=1.1.0,<2",
+    "ruff>=0.11.8,<0.12",
+    "scikit-learn>=1.6.1,<2",
+    "seaborn>=0.13.2,<0.14",
+    "tqdm>=4.67.1,<5",
+    "typer>=0.15.3,<0.16",
+]
 
 
 [tool.ruff]
@@ -29,24 +49,3 @@ extend-select = ["I"]  # Add import sorting
 [tool.ruff.lint.isort]
 known-first-party = ["sensemaking"]
 force-sort-within-sections = true
-
-
-[tool.poetry.dependencies]
-awscli = "^1.40.10"
-ipython = "^9.2.0"
-jupyterlab = "^4.4.2"
-loguru = "^0.7.3"
-matplotlib = "^3.10.1"
-mkdocs = "^1.6.1"
-notebook = "^7.4.2"
-numpy = "^2.2.5"
-pandas = "^2.2.3"
-pip = "^25.1.1"
-pytest = "^8.3.5"
-python-dotenv = "^1.1.0"
-ruff = "^0.11.8"
-scikit-learn = "^1.6.1"
-tqdm = "^4.67.1"
-typer = "^0.15.3"
-seaborn = "^0.13.2"
-openpyxl = "^3.1.5"
